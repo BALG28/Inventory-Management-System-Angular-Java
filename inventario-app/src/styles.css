@@ -1,0 +1,49 @@
+body {
+    background-color: #000000; /* Fondo completamente negro */
+    color: #FFFFFF; /* Texto en blanco para contraste */
+}
+
+.card, .table {
+    background-color: #121212; /* Negro ligeramente más claro para resaltar elementos */
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+}
+
+.navbar {
+    background-color: #1A1A1A; /* Negro grisáceo para la barra de navegación */
+}
+
+button {
+    background-color: #333333; /* Gris oscuro para botones */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #555555; /* Un gris más claro al pasar el mouse */
+}
+
+.table th {
+    background-color: #222222; /* Encabezado oscuro para la tabla */
+    color: #FFFFFF;
+}
+
+input, textarea {
+    background-color: #222222;
+    color: #FFFFFF;
+    border: 1px solid #444444;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+a {
+    color: #1E90FF; /* Azul brillante para enlaces */
+}
+
+a:hover {
+    color: #6495ED; /* Azul más claro al pasar el mouse */
+}

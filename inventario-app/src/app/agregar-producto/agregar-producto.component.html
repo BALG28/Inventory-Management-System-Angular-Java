@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="container text-center" style="margin: 30px">
+      <h3 class="titulo-producto">Agregar Producto</h3>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" class="formulario">
+      <div class="mb-4">
+        <label for="descripcion" class="form-label">Descripción del Producto</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" required [(ngModel)]="producto.descripcion">
+      </div>
+      <div class="mb-4">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" step="any" class="form-control" id="precio" name="precio" [(ngModel)]="producto.precio">
+      </div>
+      <div class="mb-4">
+          <label for="existencia" class="form-label">Existencia</label>
+          <input type="number" class="form-control" id="existencia" name="existencia" [(ngModel)]="producto.existencia">
+      </div>  
+      <div class="text-center">
+          <button type="submit" class="btn btn-futuristic me-3">Agregar</button>
+          <a href="/" class="btn btn-cancelar">Regresar</a>    
+      </div>
+  </form>
+</div>
+
+<!-- Añadir el siguiente CSS para un estilo más moderno -->
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+  }
+
+  .titulo-producto {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .formulario {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .form-label {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 26, 0.7);
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-futuristic {
+    background-color: #5cff04;
+    color: #121212;
+    border: none;
+  }
+
+  .btn-futuristic:hover {
+    background-color: #00A0B6;
+    transform: translateY(-3px);
+  }
+
+  .btn-cancelar {
+    background-color: #FF4C4C;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-cancelar:hover {
+    background-color: #E63946;
+    transform: translateY(-3px);
+  }
+</style>

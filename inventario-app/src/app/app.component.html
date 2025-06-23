@@ -1,0 +1,46 @@
+<div class="container-fluid p-0">
+  <!-- Navbar con gradiente entre Angular y Spring Boot -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #8C0AEF, #67cd23); padding: 15px;">
+      <div class="container">
+          <a class="navbar-brand fw-bold text-white" routerLink="productos" style="font-size: 1.5rem;">
+              <i class="bi bi-box-seam"></i> Sistema de Inventarios
+          </a>
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-list text-white fs-1"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link text-white fw-semibold" routerLink="productos" routerLinkActive="active">
+                          <i class="bi bi-house-door-fill"></i> Inicio
+                      </a>
+                  </li>
+                  
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div>
+
+<!-- Contenedor Principal -->
+<div class="container mt-5">
+  <div class="card shadow-lg border-0 rounded-4" style="background: linear-gradient(135deg, #8C0AEF, #67ed0d); color: white;">
+      <div class="card-body text-center p-5">
+          <h2 class="fw-bold">
+              <i class="bi bi-database-fill"></i> Bienvenido al Sistema de Inventarios
+          </h2>
+          <p class="lead">Administra tus productos de manera eficiente y rápida.</p>
+          <a routerLink="agregar-producto" class="btn btn-light btn-lg fw-semibold shadow-sm">
+              <i class="bi bi-plus-lg"></i> Agregar un Nuevo Producto
+          </a>
+      </div>
+  </div>
+</div>
+
+<!-- Espacio para el contenido dinámico -->
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Agregar Bootstrap Icons en el <head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

@@ -1,0 +1,36 @@
+<div
+    style="background: linear-gradient(135deg, #121212, #1b1b1b); padding: 20px; border-radius: 15px; color: #ffffff; font-family: 'Arial', sans-serif;">
+
+    <div style="text-align: center; margin: 30px;">
+        <h3 style="color: #ffffff; font-family: 'Verdana', sans-serif;">Editar Producto</h3>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" style="max-width: 600px; margin: 0 auto;">
+        <div style="margin-bottom: 15px;">
+            <label for="descripcion"
+                style="display: block; font-size: 16px; color: #ffffff; margin-bottom: 5px;">Descripción del
+                Producto</label>
+            <input type="text" id="descripcion" name="descripcion" required="true" [(ngModel)]="producto.descripcion"
+                style="width: 100%; padding: 10px; background-color: #202020; border: 1px solid #6fffe9; border-radius: 10px; color: #ffffff;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="precio"
+                style="display: block; font-size: 16px; color: #ffffff; margin-bottom: 5px;">Precio</label>
+            <input type="number" step="any" id="precio" name="precio" [(ngModel)]="producto.precio"
+                style="width: 100%; padding: 10px; background-color: #202020; border: 1px solid #6fffe9; border-radius: 10px; color: #ffffff;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="existencia"
+                style="display: block; font-size: 16px; color: #ffffff; margin-bottom: 5px;">Existencia</label>
+            <input type="number" id="existencia" name="existencia" [(ngModel)]="producto.existencia"
+                style="width: 100%; padding: 10px; background-color: #202020; border: 1px solid #6fffe9; border-radius: 10px; color: #ffffff;">
+        </div>
+        <div style="text-align: center;">
+            <button type="submit"
+                style="background: #00ff00; color: #000; border-radius: 10px; padding: 10px 20px; border: none; font-size: 14px; cursor: pointer;">Guardar</button>
+            <a href="/"
+                style="background: #ff0000; color: #fff; border-radius: 10px; padding: 10px 20px; font-size: 14px; text-decoration: none; display: inline-block; margin-left: 10px; cursor: pointer;">Regresar</a>
+        </div>
+    </form>
+
+</div>

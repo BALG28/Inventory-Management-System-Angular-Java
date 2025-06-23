@@ -1,0 +1,55 @@
+<div class="container">
+  <!-- Encabezado del Sistema -->
+  <div class="text-center p-4 rounded shadow" 
+       style="background: linear-gradient(90deg, #7D3C98, #dfa3e4); color: white; margin: 30px; border-radius: 15px;">
+    <h3 style="text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3); letter-spacing: 1.5px;">
+      🌿 Sistema de Inventarios 🌿
+    </h3>
+  </div>
+
+  <!-- Tabla de Inventarios -->
+  <div class="table-responsive rounded shadow-lg" 
+       style="background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 15px;">
+    <table class="table table-hover align-middle" 
+           style="background-color: rgba(255, 255, 255, 0.4); color: #4B0082; border-radius: 10px;">
+      <thead style="background: linear-gradient(90deg, #7D3C98, #abe4a3); color: white;">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Descripción del Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Existencias</th>
+          <th scope="col" class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (producto of productos; track producto.idProducto) {
+        <tr style="transition: background 0.3s;">
+          <th scope="row">{{ producto.idProducto }}</th>
+          <td>{{ producto.descripcion }}</td>
+          <td>{{ producto.precio }}</td>
+          <td>{{ producto.existencia }}</td>
+          <td class="text-center">
+            <div>
+              <button (click)="editarProducto(producto.idProducto)"
+                class="btn btn-sm" 
+                style="background: linear-gradient(45deg, #1D8348, #A3E4D7); color: white; border-radius: 8px; padding: 6px 15px; transition: transform 0.2s ease, box-shadow 0.2s ease;"
+                onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0px 0px 10px rgba(163, 228, 215, 0.7)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                ✏️ Editar
+              </button>
+              
+              <button (click)="eliminarProducto(producto.idProducto)" 
+                class="btn btn-sm ms-2" 
+                style="background: linear-gradient(45deg, #7D3C98, #4B0082); color: white; border-radius: 8px; padding: 6px 15px; transition: transform 0.2s ease, box-shadow 0.2s ease;"
+                onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0px 0px 10px rgba(125, 60, 152, 0.7)'" 
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                🗑️ Eliminar
+              </button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
