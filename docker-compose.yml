@@ -1,0 +1,39 @@
+services:
+  mysql-db:
+    image: mysql:8.0.46-oraclelinux9
+    container_name: inventarios-db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: inventario_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend-java:
+    build: ./Back-End/inventarios
+    container_name: inventarios-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/inventario_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+
+  frontend-angular:
+    build: ./inventario-app
+    container_name: inventarios-frontend
+    restart: always
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend-java
+
+volumes:
+  mysql_data:
