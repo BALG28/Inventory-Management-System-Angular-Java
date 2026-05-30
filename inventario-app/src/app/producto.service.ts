@@ -8,7 +8,7 @@ import { Producto } from './producto';
 })
 export class ProductoService {
 
-  private urlBase = "http://localhost:8080/inventario-app/productos";
+  private urlBase = "http://18.117.109.198:8080/inventario-app/productos";
 
   private clienteHttp = inject(HttpClient);
 
